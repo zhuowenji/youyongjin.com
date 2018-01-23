@@ -11,12 +11,12 @@
 获取项目：
 
 ```
-# git clone git@git.zhuo.com:zhuowenji/dealsbank_oa.git
+# git clone git@github.com:zhuowenji/youyongjin.com.git
 ```
 
 更新项目：
 ```
-# cd dealsbank_oa
+# cd youyongjin.com
 # composer update
 ```
 
