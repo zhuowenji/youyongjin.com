@@ -60,10 +60,8 @@ class IndexController extends Controller
             return Redirect::back()->withInput()->with('error', $res['message']);
         }
 
-        $list        = $res['result'];
-        $param       = '&shopid=3142284&enc=NNnquHJDd7puhIyloPfww60gY2RKZ_T5VmIG4bHs9fYTmm9sgfV8H1cTvkGcqY03KfC5Z0lFIr5IYuv03fU-f5Be8a7x10ii-wJlpWZqlKoRa2xY_iBsovfV-A8B-IyYAVLfUwOjkfI=&tk=0b7bf976c021eb067bbfa00e739d2844&share=0&fs=1&gt=1516558176&spu=5363896&v=1&cu=true&utm_source=kong&utm_medium=unionjingxiangjie&utm_campaign=t_1000243997_&utm_term=8ad20a1d2bab4bd7822512f842fb0241&abt=3';
-        $product_url = $sub_url . '?sku=' . $sku;
-        $buy_url     = $product_url . $param;
+        $list = $res['result'];
+        $buy  = $sub_url . '?sku=' . $sku . '&shopid=3142284';
 
         // https://oauth.jd.com/oauth/authorize?response_type=code&client_id=CE7D2483A773570AB9A90FC75E176CA7&redirect_uri=http://www.fuxiben.com
         // code = uqGwrx
@@ -83,7 +81,7 @@ class IndexController extends Controller
         //   "user_nick": "zhuowenji"
         // }
 
-        return view('index')->with(compact('list', 'product_url', 'buy_url'));
+        return view('index')->with(compact('list', 'buy'));
 
     }
 }

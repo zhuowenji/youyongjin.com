@@ -61,23 +61,23 @@
           @foreach($list as $v)
             <table class="table">
               <tr>
-                <td>下单地址:<br/><a target="_bank" href="<?php echo $buy_url; ?>"><?php echo $product_url; ?></a></td>
+                <td>下单地址:<br/><a target="_bank" href="{{ $buy }}">{{ $buy }}</a></td>
               </tr>
 
               <tr>
-                <td>商品价格:<?php echo $v['wlUnitPrice']; ?>元</td>
+                <td>商品价格:{{ $v['wlUnitPrice'] }}元</td>
               </tr>
 
               <tr>
-                <td>手机下单返:<?php echo $v['commisionRatioWl'] * $v['wlUnitPrice'] / 100; ?>元, 约返 <?php echo $v['commisionRatioWl']; ?>%</td>
+                <td>手机下单返:{{ $v['commisionRatioWl'] * $v['wlUnitPrice'] / 100 }}元, 约返 {{ $v['commisionRatioWl'] }}%</td>
               </tr>
 
               <tr>
-                <td>电脑下单返:<?php echo $v['commisionRatioPc'] * $v['unitPrice'] / 100; ?>元, 约返 <?php echo $v['commisionRatioPc']; ?>%</td>
+                <td>电脑下单返:{{ $v['commisionRatioPc'] * $v['unitPrice'] / 100 }}元, 约返 {{ $v['commisionRatioPc'] }}%</td>
               </tr>
 
               <tr>
-                <td>商品名称:<?php echo $v['goodsName']; ?>（<?php echo $v['isJdSale'] ? '自营' : '非自营'; ?>、<?php echo $v['isFreeShipping'] ? '包邮' : '不包邮'; ?>）</td>
+                <td>商品名称:{{ $v['goodsName'] }}（{{ $v['isJdSale'] ? '自营' : '非自营' }}、{{ $v['isFreeShipping'] ? '包邮' : '不包邮' }}）</td>
               </tr>
 
               <tr>
