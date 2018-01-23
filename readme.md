@@ -46,6 +46,13 @@ DB_PASSWORD=123456
 # php artisan migrate
 ```
 
+创建目录
+```
+# mkdir -p storage/framework/views
+# mkdir -p storage/framework/cache
+# mkdir -p storage/framework/sessions
+```
+
 安装完成后给予 storage 权限：
 ```
 # chmod -R 777 storage
@@ -64,8 +71,8 @@ nginx 配置文件（可参考，可自己定义虚拟主机）
 ```
 server {
     listen       80;
-    server_name  dealsbank.com;
-    root /project/dealsbank/public;
+    server_name  youyongjin.com www.youyongjin.com;
+    root /project/youyongjin/public;
     index  index.html index.htm index.php;
 
     # php rewrite
@@ -80,7 +87,7 @@ server {
         include        fastcgi_params;
     }
 
-    access_log /project/logs/dealsbank_access.log;
-    error_log  /project/logs/dealsbank_error.log;
+    access_log /project/logs/youyongjin.com.log;
+    error_log  /project/logs/youyongjin.com.log;
 }
 ```
