@@ -13,3 +13,5 @@
 
 Route::get('/', 'IndexController@index');
 Route::post('/', 'IndexController@search');
+
+Route::get('/batch-getcode', 'IndexController@promotionBatchGetcode');
