@@ -80,7 +80,7 @@ class IndexController extends Controller
         }
 
         $list = $res['result'];
-        $buy  = $sub_url . '?sku=' . $sku . '&shopid=3142284';
+        $buy  = $sub_url . '?sku=' . $sku . '&shopid=3148016';
 
         return view('index')->with(compact('list', 'buy'));
     }
