@@ -48,6 +48,14 @@
           </div>
         </div>
 
+        <style type="text/css">
+          iframe {
+              height: 70px;
+          }
+
+        </style>
+        <script type="text/javascript">var jd_union_pid="1170764137";var jd_union_euid="";</script><script type="text/javascript" src="//ads-union.jd.com/static/js/union.js"></script>
+
         {{ Form::open(['action'=>['IndexController@index']]) }}
             <div class="form-group">
                 <input type="text" class="form-control" name="sku" placeholder="输入商品地址或者Sku...">
