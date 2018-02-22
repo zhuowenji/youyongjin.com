@@ -8,30 +8,19 @@ use Redirect;
 
 include '../sdk/jdsdk/lotusphp_runtime/Lotus.php';
 
+/**
+ *  https://oauth.jd.com/oauth/authorize?response_type=code&client_id=2FCB940AD8758B1A17D8BA6AF49844A1&redirect_uri=http://www.youyongjin.com
+ *  获取code (code = uqGwrx)
+ *
+ *  通过code获取accessToken（有效期1年）
+ *  https://auth.360buy.com/oauth/token?grant_type=authorization_code&client_id=2FCB940AD8758B1A17D8BA6AF49844A1&redirect_uri=http://www.youyongjin.com&code=NnfK42&client_secret=dcf63610f78a4810b685290e3029e9ac
+ */
 class IndexController extends Controller
 {
     public function index()
     {
         return view('index');
     }
-
-    // https://oauth.jd.com/oauth/authorize?response_type=code&client_id=2FCB940AD8758B1A17D8BA6AF49844A1&redirect_uri=http://www.youyongjin.com
-    // code = uqGwrx
-    //
-    //
-    // 获取accessToken
-    // https://auth.360buy.com/oauth/token?grant_type=authorization_code&client_id=2FCB940AD8758B1A17D8BA6AF49844A1&redirect_uri=http://www.youyongjin.com&code=NnfK42&client_secret=dcf63610f78a4810b685290e3029e9ac
-
-    // {
-    //   "access_token": "2554d7d6-d15d-49f0-bd01-a289882e1849",
-    //   "code": 0,
-    //   "expires_in": 31535999,
-    //   "refresh_token": "506d3f64-c9f3-4bad-90a9-3bde109ac8ce",
-    //   "time": "1518321395059",
-    //   "token_type": "bearer",
-    //   "uid": "9249394587",
-    //   "user_nick": "zhuowenji"
-    // }
 
     public function search(Request $request)
     {
@@ -53,12 +42,10 @@ class IndexController extends Controller
             if (isset($str['1'])) {
                 $sku = substr($str['1'], 0, -5);
             }
-
         } else {
             $sub_url = 'https://item.jd.com/' . $sku . '.html';
         }
 
-        //include '../sdk/jdsdk/lotusphp_runtime/Lotus.php';
         $lotus                         = new \Lotus();
         $lotus->option['autoload_dir'] = '../sdk/jdsdk/jd';
         $lotus->devMode                = JD_SDK_DEV_MODE;
