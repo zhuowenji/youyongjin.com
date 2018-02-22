@@ -4,7 +4,6 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="佣金返利网，京东、淘宝、天猫、返利网">
-<meta name="generator" content="Jekyll v3.7.0">
 
 <title>有佣金、京东、淘宝、天猫、返利</title>
 
@@ -69,7 +68,7 @@
           @foreach($list as $v)
             <table class="table">
               <tr>
-                <td>下单地址:<br/><a target="_bank" href="{{ $buy }}">{{ $buy }}</a></td>
+                <td><a target="_bank" href="{{ $buy[$v['skuId']] }}">点击下单即可获得佣金</a></td>
               </tr>
 
               <tr>
