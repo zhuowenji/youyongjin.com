@@ -41,14 +41,19 @@ class IndexController extends Controller
         }
 
         if (!preg_match("/^\d*$/", $sku)) {
-            $url     = explode('?', $sku);
+            $url = explode('?', $sku);
+
             $sub_url = $url[0];
+
             if (preg_match("/^(http:\/\/|https:\/\/).*$/", $sub_url)) {
-                $url = substr($url[0], 8);
+                $sub_url = substr($url[0], 8);
             }
 
-            $str = explode('/', $url);
-            $sku = substr($str['1'], 0, -5);
+            $str = explode('/', $sub_url);
+            if (isset($str['1'])) {
+                $sku = substr($str['1'], 0, -5);
+            }
+
         } else {
             $sub_url = 'https://item.jd.com/' . $sku . '.html';
         }
